@@ -15,12 +15,12 @@
 |introduction|text||
 |user_image|string||
 ### Association
-- has_one :sending_destinations
-- has_one :credit_cards
+- has_one :sending_destination
 - has_one :street_address
 - has_many :products
-- has_many :payment_information
-- has_many :purchase_history
+- has_many :payment_informations
+- has_many :purchase_histories
+- has_many :credit_cards
 
 
 ## productsテーブル
@@ -28,20 +28,20 @@
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
-|description|string|null: false|
+|description|text|null: false|
 |status|string|null: false|
 |size|string|null: false|
 |judgment|string|null: false|
 |cost|integer|null: false|
 |days|integer|null: false|
 |shipping_method|string|null: false|
-|category_id|integer|null: false, foreign_key: true|
-|brand_id|integer|null: false, foreign_key: true|
-|image_id|integer|null: false, foreign_key: true|
-|user_id|reference|null: false, foreign_key: true|
+|category|reference|null: false, foreign_key: true|
+|brand|reference|null: false, foreign_key: true|
+|image|reference|null: false, foreign_key: true|
+|user|reference|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
-- belongs_to :categories
+- belongs_to :user
+- belongs_to :category
 - belongs_to :brand
 - has_many :product_images
 
@@ -53,53 +53,51 @@
 |destination_first_name|string|null: false|
 |destination_last_name_kana|string|null: false|
 |destination_first_name_kana|string|null: false|
-|post_code|intrger|null: false|
+|post_code|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |adress|string|null: false|
 |building_name|string|null: false|
-|phone_number|string|null: false|
-|user_id|reference|null: false, foreign_key: true|
+|phone_number|integer|null: false|
+|user|reference|null: false, foreign_key: true|
 ### Association
-- has_one :users
-- has_one :purchase_goods
+- has_one :user
+- has_one :purchase_product
 
 
 
 ## street_addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_code|intrger|null: false|
+|post_code|integer|null: false|
 |prefectures|string|null: false|
 |municipalities|string|null: false|
 |building_name|string|null: false|
-|phone_number|string|null: false|
+|phone_number|integer|null: false|
 ### Association
-- has_one :users
+- has_one :user
 
 
 ## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|intrger|null: false, unique: true|
-|expiration_year|intrger|null: false|
-|expiration_month|intrger|null: false|
-|security_code|intrger|null: false|
-|user_id|reference|null: false, foreign_key: true|
+|card_number|integer|null: false, unique: true|
+|expiration_year|integer|null: false|
+|expiration_month|integer|null: false|
+|security_code|integer|null: false|
+|user|reference|null: false, foreign_key: true|
 ### Association
-- has_one :users
-- has_many :payment_information
+- belongs_to :user
+- has_many :payment_informations
 
 
 ## product_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|url|string|null: false|
-|product_id|intrger|null: false|
-|purchase_id|intrger|null: false|
+|product_id|integer|null: false, index: true|
 |image|string|null: false|
 ### Association
-- belongs_to :products
+- belongs_to :product
 
 
 ## categoriesテーブル
@@ -122,28 +120,28 @@
 ## payment_informationテーブル
 |Column|Type|Options|
 |------|----|-------|
-|settlement_amount|intrger|null: false|
-|user_id|reference|null: false, foreign_key: true|
+|settlement_amount|integer|null: false|
+|user|reference|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
-- belongs_to :credit_cards
+- belongs_to :user
+- belongs_to :credit_card
 
 
 ## purchase_historyテーブル
 |Column|Type|Options|
 |------|----|-------|
-|purchase_goods|reference|null: false, foreign_key: true|
+|purchase_product|reference|null: false, foreign_key: true|
 |pay_method|string|null: false|
-|user_id|reference|null: false, foreign_key: true|
+|user|reference|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
-- has_many :purchase_goods
+- belongs_to :user
+- has_many :purchase_products
 
 
-## purchase_goodsテーブル
+## purchase_productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|purchase_goods|reference|null: false, foreign_key: true|
+|project|reference|null: false, foreign_key: true|
 ### Association
 - belongs_to :purchase_history
-- has_one :sending_destinations
+- has_one :sending_destination
