@@ -9,9 +9,7 @@
 |first_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_name|string|null: false|
-|birth_year|date|null: false|
-|birth_month|date|null: false|
-|birth_day|date|null: false|
+|birthday|date|null: false|
 |introduction|text||
 |user_image|string||
 ### Association
@@ -37,7 +35,6 @@
 |shipping_method|string|null: false|
 |category|reference|null: false, foreign_key: true|
 |brand|reference|null: false, foreign_key: true|
-|image|reference|null: false, foreign_key: true|
 |user|reference|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
@@ -69,13 +66,14 @@
 ## street_addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_code|integer|null: false|
+|post_code|string|null: false|
 |prefectures|string|null: false|
 |municipalities|string|null: false|
 |building_name|string|null: false|
-|phone_number|integer|null: false|
+|phone_number|string|null: false|
+|user|reference|null: false, foreign_key: true|
 ### Association
-- has_one :user
+- belongs_to :user
 
 
 ## credit_cardsテーブル
@@ -85,6 +83,8 @@
 |expiration_year|integer|null: false|
 |expiration_month|integer|null: false|
 |security_code|integer|null: false|
+|customer|reference|null: false, foreign_key: true|
+|card|reference|null: false, foreign_key: true|
 |user|reference|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
@@ -112,7 +112,7 @@
 ## brandテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string||
+|name|string|null: false|
 ### Association
 - has_many :products
 
@@ -138,10 +138,3 @@
 - has_many :purchase_products
 
 
-## purchase_productsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|project|reference|null: false, foreign_key: true|
-### Association
-- belongs_to :purchase_history
-- has_one :sending_destination
