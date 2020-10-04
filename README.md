@@ -27,11 +27,11 @@
 |name|string|null: false|
 |price|integer|null: false|
 |description|text|null: false|
-|status|integer|null: false|
-|size|integer|null: false|
+|status|string|null: false|
 |cost|integer|null: false|
 |days|integer|null: false|
 |shipping_method|string|null: false|
+|size_id|integer|null: false|
 |category|references|null: false, foreign_key: true|
 |brand|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
@@ -41,7 +41,7 @@
 - belongs_to :brand
 - belongs_to :buyer
 - has_many :product_images
-
+- has_many :size
 
 ## sending_destinationsテーブル
 |Column|Type|Options|
