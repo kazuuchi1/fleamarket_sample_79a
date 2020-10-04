@@ -32,13 +32,14 @@
 |cost|integer|null: false|
 |days|integer|null: false|
 |shipping_method|string|null: false|
-|category|reference|null: false, foreign_key: true|
-|brand|reference|null: false, foreign_key: true|
-|user|reference|null: false, foreign_key: true|
+|category|references|null: false, foreign_key: true|
+|brand|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :category
 - belongs_to :brand
+- belongs_to :buyer
 - has_many :product_images
 
 
@@ -49,13 +50,13 @@
 |destination_first_name|string|null: false|
 |destination_last_name_kana|string|null: false|
 |destination_first_name_kana|string|null: false|
-|post_code|integer|null: false|
+|post_code|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |adress|string|null: false|
 |building_name|string|null: false|
-|phone_number|integer|null: false|
-|user|reference|null: false, foreign_key: true|
+|phone_number|string|null: false|
+|user|references|null: false, foreign_key: true|
 ### Association
 - has_one :user
 - has_one :purchase_product
@@ -70,24 +71,19 @@
 |municipalities|string|null: false|
 |building_name|string|null: false|
 |phone_number|string|null: false|
-|user|reference|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
 
-## credit_cardsテーブル
+## buyerテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null: false, unique: true|
-|expiration_year|integer|null: false|
-|expiration_month|integer|null: false|
-|security_code|integer|null: false|
-|customer|reference|null: false, foreign_key: true|
-|card|reference|null: false, foreign_key: true|
-|user|reference|null: false, foreign_key: true|
+|card_information|string|null: false|
+|settlement_amount|integer|null: false|
+|street_adress|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
-- has_many :payment_informations
+- has_one :prpduct
 
 
 ## product_imagesテーブル
@@ -116,24 +112,12 @@
 - has_many :products
 
 
-## payment_informationテーブル
-|Column|Type|Options|
-|------|----|-------|
-|settlement_amount|integer|null: false|
-|user|reference|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :credit_card
-
-
 ## purchase_historyテーブル
 |Column|Type|Options|
 |------|----|-------|
-|purchase_product|reference|null: false, foreign_key: true|
-|pay_method|string|null: false|
-|user|reference|null: false, foreign_key: true|
+|purchase_product|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :purchase_products
 
 
