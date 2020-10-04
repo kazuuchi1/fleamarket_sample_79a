@@ -27,8 +27,8 @@
 |name|string|null: false|
 |price|integer|null: false|
 |description|text|null: false|
-|status|string|null: false|
-|size|string|null: false|
+|status|integer|null: false|
+|size|integer|null: false|
 |cost|integer|null: false|
 |days|integer|null: false|
 |shipping_method|string|null: false|
