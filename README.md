@@ -13,10 +13,10 @@
 |introduction|text||
 |user_image|string||
 ### Association
-- has_one :sending_destination
-- has_one :street_address
-- has_many :products
-- has_many :payment_informations
+- has_one :sending_destination, dependent: :destroy
+- has_one :street_address, dependent: :destroy
+- has_many :products, dependent: :destroy
+- has_many :payment_informations, dependent: :destroy
 - has_many :purchase_histories
 - has_many :credit_cards
 
@@ -40,7 +40,7 @@
 - belongs_to :category
 - belongs_to :brand
 - belongs_to :buyer
-- has_many :product_images
+- has_many :product_images, dependent: :destroy
 - has_many :size
 
 ## sending_destinationsテーブル
