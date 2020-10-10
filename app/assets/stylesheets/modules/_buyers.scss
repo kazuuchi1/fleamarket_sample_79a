@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+.Main {
+  width: 100vw;
+  background-color: #f8f8f8;
+  .Header {
+    height: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: aqua;
+    .TopLogoImage {
+      width: 250px;
+      height: 70px;
+      background-image: url(material/logo/logo.png);
+      background-repeat: no-repeat;
+      background-size: 250px;
+      // background-color: burlywood;
+    }
+  }
+  .Content {
+    display: flex;
+    justify-content: center;
+    // background-color: aquamarine;
+    .PurchaseDetails {
+      width: 700px;
+      height: 100%;
+      padding: 0px 170px;
+      background-color: #fff;
+      .Form {
+        &__Name {
+          padding: 30px 0px;
+          font-size: 23px;
+          font-weight: bold;
+          text-align: center;
+          border-bottom: 1px solid #f8f8f8;
+          // background-color: greenyellow;
+        }
+        &__Products {
+          height: 150px;
+          border-bottom: 1px solid #f8f8f8;
+          display: flex;
+          position: relative;
+          &--Image {
+            width: 80px;
+            height: 80px;
+            background-image: url(products.jpg);
+            background-repeat: no-repeat;
+            background-size: 80px;
+            border-radius: 5px;
+            position: absolute;
+            top: 35px;
+            left: 15px;
+          }
+          &--Information {
+            width: 230px;
+            font-size: 13px;
+            position: absolute;
+            top: 35px;
+            right: 15px;
+            // background-color: thistle;
+            .ProductsName {
+              margin-bottom: 5px;
+            }
+            .ProductsPrice {
+              text-align: end;
+              span {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        &__Price {
+          padding: 30px 10px;
+          font-weight: bold;
+          border-bottom: 1px solid #f8f8f8;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          // background-color: khaki;
+          &--Text {
+            font-size: 18px;
+          }
+          &--Number {
+            font-size: 22px;
+          }
+        }
+        &__PaymentMethod {
+          padding: 30px 10px;
+          border-bottom: 1px solid #f8f8f8;
+          // background-color: teal;
+          span {
+            font-size: 14px;
+            font-weight: bold;
+          }
+          ul {
+            margin-top: 15px;
+            font-size: 13px;
+          }
+        }
+        &__ShippingAddress {
+          padding: 30px 10px;
+          border-bottom: 1px solid #f8f8f8;
+          // background-color: slateblue;
+          span {
+            font-size: 14px;
+            font-weight: bold;
+          }
+          ul {
+            margin-top: 15px;
+            font-size: 13px;
+          }
+        }
+        &__Btn {
+          width: 330px;
+          height: 50px;
+          margin: 0 auto;
+          margin-top: 30px;
+          margin-bottom: 60px;
+          background-color: #40e0d0;
+          &--Btn {
+            padding-top: 13px;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .Footer {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    // background-color: blue;
+    .Terms {
+      padding: 40px 0px;
+      &__Links {
+        width: 370px;
+        font-size: 11px;
+        display: flex;
+        justify-content: space-around;
+        .Link {
+          text-decoration: none;
+        }
+      }
+    }
+    .BottomLogoImage {
+      width: 180px;
+      height: 50px;
+      background-image: url(material/logo/logo.png);
+      background-repeat: no-repeat;
+      background-size: 180px;
+    }
+    .Copyright {
+      font-size: 10px;
+    }
+  }
+}
