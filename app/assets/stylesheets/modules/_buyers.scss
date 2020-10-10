@@ -61,7 +61,10 @@
             }
             .ProductsPrice {
               text-align: end;
-              span {
+              &__Shipping {
+                font-size: 11px;
+              }
+              &__Price {
                 font-weight: bold;
               }
             }
