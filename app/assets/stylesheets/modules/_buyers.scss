@@ -10,20 +10,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // background-color: aqua;
     .TopLogoImage {
       width: 250px;
       height: 70px;
       background-image: url(material/logo/logo.png);
       background-repeat: no-repeat;
       background-size: 250px;
-      // background-color: burlywood;
     }
   }
   .Content {
     display: flex;
     justify-content: center;
-    // background-color: aquamarine;
     .PurchaseDetails {
       width: 700px;
       height: 100%;
@@ -36,7 +33,6 @@
           font-weight: bold;
           text-align: center;
           border-bottom: 1px solid #f8f8f8;
-          // background-color: greenyellow;
         }
         &__Products {
           height: 150px;
@@ -60,7 +56,6 @@
             position: absolute;
             top: 35px;
             right: 15px;
-            // background-color: thistle;
             .ProductsName {
               margin-bottom: 5px;
             }
@@ -79,7 +74,6 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          // background-color: khaki;
           &--Text {
             font-size: 18px;
           }
@@ -90,7 +84,6 @@
         &__PaymentMethod {
           padding: 30px 10px;
           border-bottom: 1px solid #f8f8f8;
-          // background-color: teal;
           span {
             font-size: 14px;
             font-weight: bold;
@@ -138,7 +131,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    // background-color: blue;
     .Terms {
       padding: 40px 0px;
       &__Links {
