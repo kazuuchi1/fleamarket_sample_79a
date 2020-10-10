@@ -87,26 +87,47 @@
         &__PaymentMethod {
           padding: 30px 10px;
           border-bottom: 1px solid #f8f8f8;
-          span {
-            font-size: 14px;
-            font-weight: bold;
+          display: flex;
+          justify-content: space-between;
+          &--Left {
+            span {
+              font-size: 14px;
+              font-weight: bold;
+            }
+            ul {
+              margin-top: 15px;
+              font-size: 13px;
+            }
           }
-          ul {
-            margin-top: 15px;
+          &--Right {
             font-size: 13px;
+            .ChangeButton {
+              text-decoration: none;
+              color: #1e90ff;
+            }
           }
         }
         &__ShippingAddress {
           padding: 30px 10px;
           border-bottom: 1px solid #f8f8f8;
-          // background-color: slateblue;
-          span {
-            font-size: 14px;
-            font-weight: bold;
+          display: flex;
+          justify-content: space-between;
+          &--Left {
+            span {
+              font-size: 14px;
+              font-weight: bold;
+            }
+            ul {
+              margin-top: 15px;
+              font-size: 13px;
+            }
           }
-          ul {
-            margin-top: 15px;
+          &--Right {
             font-size: 13px;
+            .ChangeButton {
+              text-decoration: none;
+              color: #1e90ff;
+            }
           }
         }
         &__Btn {
@@ -142,6 +163,7 @@
         display: flex;
         justify-content: space-around;
         .Link {
+          color: black;
           text-decoration: none;
         }
       }

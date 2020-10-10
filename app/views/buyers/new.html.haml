@@ -21,17 +21,25 @@
           .Form__Price--Number
             ¥2,000
         .Form__PaymentMethod
-          %span 支払い方法
-          %ul
-            %li クレジットカード
-            %li ************1234
-            %li 有効期限 01 / 25
+          .Form__PaymentMethod--Left
+            %span 支払い方法
+            %ul
+              %li クレジットカード
+              %li ************1234
+              %li 有効期限 01 / 25
+          .Form__PaymentMethod--Right
+            = link_to "#", class: 'ChangeButton' do
+              変更する >
         .Form__ShippingAddress
-          %span 配送先
-          %ul
-            %li 〒000-0000
-            %li 東京都 東京区 東京1-2-3
-            %li 山田 花子
+          .Form__ShippingAddress--Left
+            %span 配送先
+            %ul
+              %li 〒000-0000
+              %li 東京都 東京区 東京1-2-3
+              %li 山田 花子
+          .Form__ShippingAddress--Right
+            = link_to "#", class: 'ChangeButton' do
+              変更する >
         -# = f.submit '購入する', class: 'Form__Btn'
         .Form__Btn
           = link_to "#", class: 'Form__Btn--Btn' do
