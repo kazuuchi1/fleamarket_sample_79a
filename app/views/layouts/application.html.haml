@@ -1,6 +1,22 @@
 !!!
 %html
   %head
+    .header
+      .headerTitle
+        .mainheader
+          %h1.icon
+            %a{ href: '#' }
+              %img{src: "assets/logo.png"}
+          .search
+            %form{:action => "#", :method => "get"}
+              %input.searchbox{"placeholder": "キーワードから探す"}
+              %button{"type": "submit"}
+                .buttonicon
+                  %img{src: "assets/icon-search1.png"}
+        .navclass
+          %ul.centerbar
+            %li.list-left
+              %a{ href: '#' }カテゴリー
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title FleamarketSample79a
     = csrf_meta_tags
