@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  # root 'items#index'
-  # root 'buyers#new'
-  root 'mypages#show'
+  root 'items#index'
   resources :mypages, only: [:show] do
     collection do
       get 'logout'
@@ -9,4 +7,5 @@ Rails.application.routes.draw do
   end
   resources :cards, only: [:index]
   resources :buyers, only: [:new, :create]
+  resources :products, only: [:show]
 end
