@@ -1,0 +1,48 @@
+.subtilte{
+  background-image: url(/assets/bg-appBanner-pict.jpg);
+  padding: 100px 40px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  .subtilte__inner{
+    color: #fff;
+    text-align: center;
+    .inner-tilte{
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    .inner-text{
+      font-size: 35px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    .inner__icon{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 20px auto 0;
+      a.abtn{
+        margin-right: 10px;
+        width: 180px;
+        img{
+          width: 100%;
+          vertical-align: bottom;
+        }
+        &.abtn:hover{
+          opacity: 0.5;
+        }
+      }
+      a.bbtn{
+        width: 180px;
+        img{
+          width: 100%;
+          vertical-align: bottom;
+        }
+        &.bbtn:hover{
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}

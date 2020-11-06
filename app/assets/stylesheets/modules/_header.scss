@@ -60,7 +60,7 @@
     .leftbar{
       position: relative;
       display: flex;
-      .list-left{
+      .left-left{
         text-decoration: none;
         padding: 0;
         a{
@@ -71,6 +71,42 @@
           background-repeat: no-repeat;
           background-size: 18px;
           padding-right: 30px;
+        }
+      }
+      .left-right{
+        a{
+          color: #333;
+          text-decoration: none;
+          line-height: 32px;
+          background-position: center right;
+          background-repeat: no-repeat;
+          background-size: 18px;
+          padding-right: 30px;
+        }
+      }
+    }
+    .rightbar{
+      margin-left: auto;
+      display: flex;
+      text-decoration: none;
+
+      .right-left{
+        a{
+          display: flex;
+          padding-right: 20px;
+          align-items: center;
+          color: #333;
+          text-decoration: none;
+          line-height: 32px;
+        }
+      }
+      .right-right{
+        a{
+          display: flex;
+          align-items: center;
+          color: #333;
+          text-decoration: none;
+          line-height: 32px;
         }
       }
     }
