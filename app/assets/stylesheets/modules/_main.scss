@@ -121,19 +121,12 @@
           span{
             color: #3CCACE;
           }
+
         }
         &__description{
           font-size: 18px;
           line-height: 1.5;
           margin: 16px 0 0;
-        }
-        .inner__icon{
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          margin: 20px auto 0;
-
-
         }
       }
       .topsecound-last{
@@ -154,7 +147,6 @@
         }
       }
     }
-
   }
   .topthird{
     background-image: url(/assets/material/bg-topMiddleDl-pict.jpg);
@@ -179,29 +171,14 @@
           margin: 20px 0 30px;
           line-height: 1.5;
         }
-        .inner__icon{
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          margin: 20px auto 0;
-          a.abtn{
-            margin-right: 10px;
+      }
+      .inner__icon{
+        display: flex;
+        a{
+          margin-right: 10px;
+          .inner__icon2{
             width: 180px;
-            img{
-              width: 100%;
-              vertical-align: bottom;
-            }
-            &.abtn:hover{
-              opacity: 0.5;
-            }
-          }
-          a.bbtn{
-            width: 180px;
-            img{
-              width: 100%;
-              vertical-align: bottom;
-            }
-            &.bbtn:hover{
+            &.inner__icon2:hover{
               opacity: 0.5;
             }
           }
@@ -260,4 +237,40 @@
       }
     }
   }
+  .pickupkategori,.productbrnd{
+    padding: 80px 0 0;
+    background-color: #f8f8f8;
+    height: 100%;
+    .kategorihead{
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: bold;
+    }
+    .productbox{
+      margin: 0;
+      padding: 0;
+      .productboxhead{
+        text-align: center;
+        a{
+          font-size: 24px;
+          text-decoration: none;
+          color: #3CCACE;
+          .title{
+          font-weight: bold;
+          }
+        }
+      }
+      .productlists{
+        width: 780px;
+        margin: 26px auto;
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+  }
+  .productbrnd{
+    padding-bottom: 80px;
+  }
+  
 }

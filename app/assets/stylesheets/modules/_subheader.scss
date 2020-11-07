@@ -22,25 +22,13 @@
       display: flex;
       justify-content: center;
       margin: 20px auto 0;
-      a.abtn{
+      a{
         margin-right: 10px;
-        width: 180px;
-        img{
-          width: 100%;
-          vertical-align: bottom;
-        }
-        &.abtn:hover{
-          opacity: 0.5;
-        }
-      }
-      a.bbtn{
-        width: 180px;
-        img{
-          width: 100%;
-          vertical-align: bottom;
-        }
-        &.bbtn:hover{
-          opacity: 0.5;
+        .inner__icon3{
+          width: 180px;
+          &.inner__icon3:hover{
+            opacity: 0.5;
+          }
         }
       }
     }
