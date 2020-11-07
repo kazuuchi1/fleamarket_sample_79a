@@ -1,5 +1,4 @@
 @import "modules/buyers";
-@import "reset";
 @import "modules/main";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -11,3 +10,13 @@
 body {
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
+
+@import "modules/products";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "reset";
+@import "sidebar";
+@import "mypages";
+@import "cards";
+@import "logout";
+
