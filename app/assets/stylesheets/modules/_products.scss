@@ -2,6 +2,40 @@
   box-sizing: border-box;
 }
 
+// 【index】
+.Product {
+  width: 233px;
+  height: 245px;
+  text-decoration: none;
+  display: block;
+  background-color: #fff;
+  .ItemImage {
+    width: 233px;
+    height: 150px;
+    background-image: url(products2.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  .RelatedItemDetail {
+    padding: 16px;
+    color: #333;
+    &__Details {
+      margin-top: 3px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      .Price {
+        font-family: Arial;
+        p {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+// 【show】
 .ShowMain {
   width: 100vw;
   height: 100%;
@@ -32,30 +66,23 @@
             display: flex;
             justify-content: center;
             li {
+              .TopImage {
               width: 560px;
               height: 346px;
-              background-image: url(products2.jpg);
-              background-position: center;
-              background-size: cover;
+              object-fit: contain;
+              }
             }
           }
           &--BottomImage {
             display: flex;
             justify-content: center;
             li {
+              .BottomImage {
               width: 140px;
               height: 87px;
               margin: 0px 5px;
-              background-position: center;
-              background-size: cover;
-            }
-            .Image1 {
-              background-image: url(products2.jpg);
-              background-repeat: no-repeat;
-            }
-            .Image2 {
-              background-image: url(products1.jpg);
-              background-repeat: no-repeat;
+              object-fit: contain;
+              }
             }
           }
         }
@@ -119,6 +146,51 @@
               text-decoration: none;
             }
           }
+        }
+      }
+      .EditBox {
+        margin-top: 10px;
+        padding: 25px 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: #fff;
+        &__Btn {
+          width: 650px;
+          padding: 13px 0px;
+          text-align: center;
+          border-radius: 5px;
+          text-decoration: none;
+          color: #fff;
+          display: block;
+          &--EditBtn {
+            background-color: #3CCACE;
+          }
+          &--DeleteBtn {
+            background-color: gray;
+          }
+        }
+        .OR {
+          padding: 15px 0px;
+          text-align: center;
+        }
+      }
+      .ToBuyBox {
+        margin-top: 10px;
+        padding: 25px 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: #fff;
+        &__ToBuyBtn {
+          width: 650px;
+          padding: 13px 0px;
+          text-align: center;
+          border-radius: 5px;
+          text-decoration: none;
+          color: #fff;
+          background-color: #3CCACE;
+          display: block;
         }
       }
       .CommentBox {
@@ -188,7 +260,7 @@
           .RelatedItemImage {
             width: 233px;
             height: 150px;
-            background-image: url(products2.jpg);
+            background-image: url(https://d2v9opmik2a3uk.cloudfront.net/uploads/2020/05/26111036/a706e9c3a43aa42490b660e33eeb4430_1590491434-1024x683.jpg);
             background-position: center;
             background-size: cover;
           }
