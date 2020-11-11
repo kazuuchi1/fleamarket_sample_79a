@@ -12,11 +12,8 @@
   .ItemImage {
     width: 233px;
     height: 150px;
-    background-image: url(products2.jpg);
-    background-position: center;
-    background-size: cover;
   }
-  .RelatedItemDetail {
+  .ItemDetail {
     padding: 16px;
     color: #333;
     &__Details {
