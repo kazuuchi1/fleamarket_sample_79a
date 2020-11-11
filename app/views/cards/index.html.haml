@@ -1,0 +1,61 @@
+.main
+  .Header
+    .TopLogoImage
+  .Content1
+    = render 'mypages/sidebar'
+    .main-box
+      .card-main
+        .contents-add-input
+          = form_with(model: @card, url: cards_path, method: :post, local: true) do |f|
+            .add-head
+            %h2
+              クレジットカード情報入力
+            .add-bottom
+              .add-bottom-form
+                .form-group
+                  %label
+                    カード番号
+                  %span
+                    必須
+                  .name-first
+                    = f.text_field :card_number, class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text"                                    
+                .form-group
+                  %label
+                    有効期限
+                    %span
+                      必須
+                  .select-wrap
+                    .select-wrap-half                     
+                      %p
+                        月
+                    .select-wrap-half                     
+                      %p
+                        年
+                .form-group
+                  %label
+                    セキュリティコード
+                  %span
+                    必須
+                  .name-first
+                    = f.text_field :pin_number, class: "input-default", placeholder: "カード背面4桁もしくは3桁の番号" ,maxlength: "4"
+                  .signup-seqcode
+                    %p
+                      カード背面の番号とは？
+                .next-button
+                  #card_token
+                  = f.submit "追加する", id: "token_submit",class: 'add-btn'
+  .Footer
+    .Terms
+      %ul.Terms__Links
+        %li.Terms__Links--PrivacyPolicy
+          = link_to "#", class: 'Link' do
+            プライバシーポリシー
+        %li.Terms__Links--TermsOfService
+          = link_to "#", class: 'Link' do
+            FURIMA利用規約
+        %li.Terms__Links--NotationRelatedToSpecificCommercialTransactions
+          = link_to "#", class: 'Link' do
+            特定商取引に関する表記
+    .BottomLogoImage
+    .Copyright
+      © FURIMA
