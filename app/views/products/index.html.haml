@@ -89,7 +89,7 @@
           .form-shipping__area__input
             %span.form-shipping__area__input__lavel 都道府県 
             .form-shipping__area__input.icon-relative
-              = f.collection_select(:prefecture_id, Prefecture.all, :id , :name, prompt: "--", class: 'prefecture')
+              = f.collection_select(:prefecture_id, Prefecture.all, :id , :name, prompt: "選択して下さい", class: 'prefecture')
         .form-shipping__days
           .form-shipping__days__label
             %label 発送までの日数
