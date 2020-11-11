@@ -115,10 +115,10 @@
         .form-btn__top
           %input.form-btn__top{"data-disable-with" => "出品する", name: "commit", type: "submit", value: "出品する"}/
         .form-btn__midle
-          %a.form-btn__midle{href: "#"}
+          = link_to "#" do
             下書きに保存
         .form-btn__bottom
-          %a.form-btn__bottom{href: "/"}
+          = link_to "/" do
             もどる
       .form-term
         禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
@@ -128,8 +128,8 @@
         %li プライバシーポリシー
         %li FURIMA利用規約
         %li 特定商取引に関する表記
-    %a{href: "/"}
-      %img{src: "/assets/material/logo/logo-white.png"}/
+    = link_to "/" do
+      = image_tag src="/assets/material/logo/logo-white.png"
     .devise__footer__copywirte
       %small
         © FURIMA, Inc.
