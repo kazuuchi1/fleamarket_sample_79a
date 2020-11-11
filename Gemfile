@@ -69,4 +69,6 @@ end
 gem 'devise'
 gem 'erb2haml'
 
- gem 'font-awesome-sass'
+gem 'font-awesome-sass'
+
+gem 'active_hash'
