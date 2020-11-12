@@ -64,7 +64,6 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     ancestry (3.2.1)
       activerecord (>= 4.2.0)
-    bcrypt (3.1.13)
     autoprefixer-rails (10.0.2.0)
       execjs
     bcrypt (3.1.15)
@@ -301,8 +300,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ancestry
   active_hash
+  ancestry
   bootsnap (>= 1.4.2)
   bootstrap-sass
   byebug

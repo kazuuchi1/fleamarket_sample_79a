@@ -9,3 +9,4 @@ Rails.application.routes.draw do
   resources :cards, only: [:index]
   resources :buyers, only: [:new, :create]
   resources :products, only: [:index, :new, :show]
+end

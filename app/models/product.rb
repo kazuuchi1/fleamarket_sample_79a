@@ -9,5 +9,5 @@ class Product < ApplicationRecord
   mount_uploader :product_image, ImageUploader
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :prefecture.rb
+  belongs_to_active_hash :prefecture
 end
