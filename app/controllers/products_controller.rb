@@ -1,5 +1,8 @@
 class ProductsController < ApplicationController
-
+  
+  def new
+  end
+  
   def index
     @products = Product.all
     @product_image = ProductImage.where(params[:ids]).first

@@ -7,4 +7,7 @@ class Product < ApplicationRecord
   has_many :categories, through: :product_categories
 
   mount_uploader :product_image, ImageUploader
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture.rb
 end

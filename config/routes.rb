@@ -8,5 +8,4 @@ Rails.application.routes.draw do
   end
   resources :cards, only: [:index]
   resources :buyers, only: [:new, :create]
-  resources :products, only: [:index, :show]
-end
+  resources :products, only: [:index, :new, :show]
