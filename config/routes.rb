@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'products#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :mypages, only: [:show] do
     collection do
       get 'logout'
@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   end
   resources :cards, only: [:index]
   resources :buyers, only: [:new, :create]
-  resources :products, only: [:show]
+  resources :products, only: [:index, :new, :show]
 end

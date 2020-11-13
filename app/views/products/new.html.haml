@@ -1,0 +1,135 @@
+!!!
+.devise__header
+  = link_to "/" do
+    = image_tag src="/assets/material/logo/logo.png"
+.wrapper
+  .form-new
+    = form_with model: @products do |f|
+      -# %input{name: "utf8", type: "hidden", value: "✓"}/
+      -# %input{name: "authenticity_token", type: "hidden", value: "sOAZ2Pxr9dhppivIyWwYGIL048Kp4lexTZMjQip5E1xkbfsDb4CLoyMU6CBsHpOQZ2+RH+206Ai7l5RyBasBaw=="}/
+      .form-image
+        .form-image__label
+          %label 出品画像
+          %span 必須
+        %p 最大5枚までアップロードできます
+        .form-image__box
+          .prev-content
+          .label-content
+            %label.label-box{for: "item_item_images_attributes_0_src"}
+              %pre.label-box-visible
+                = image_tag src="/assets/material/icon/icon_camera.png", size: "35x35"
+          .hidden-content
+            %input#item_item_images_attributes_0_src.hidden-field.new-image{name: "item[item_images_attributes][0][src]", type: "file"}/
+            %input#item_item_images_attributes_1_src.hidden-field.new-image{name: "item[item_images_attributes][1][src]", type: "file"}/
+            %input#item_item_images_attributes_2_src.hidden-field.new-image{name: "item[item_images_attributes][2][src]", type: "file"}/
+            %input#item_item_images_attributes_3_src.hidden-field.new-image{name: "item[item_images_attributes][3][src]", type: "file"}/
+            %input#item_item_images_attributes_4_src.hidden-field.new-image{name: "item[item_images_attributes][4][src]", type: "file"}/
+      .form-item
+        .form-item__name
+          .form-item__name__label
+            %label 商品名
+            %span 必須
+          .form-item__name__input
+            %input#item_name{name: "item[name]", placeholder: "40文字まで", type: "text"}/
+        .form-item__text
+          .form-item__text__label
+            %label 商品の説明
+            %span 必須
+          .form-item__text__input
+            %textarea#item_text{name: "item[text]", placeholder: "商品の説明（必須1,000文字以内(色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+      .form-detail
+        %p 商品の詳細
+        .form-detail__category
+          .form-detail__category__label
+            %label カテゴリー
+            %span 必須
+          .form-detail__category__input
+            %select#category_select.select-default{name: "item[category_id]"}
+              %option{value: ""} 選択して下さい
+              %option{value: "1"} レディース
+              %option{value: "61"} メンズ
+              %option{value: "111"} ベビー/キッズ
+              %option{value: "149"} 本・音楽・ゲーム
+              %option{value: "190"} ハンドメイド
+        .form-detail__brand
+          .form-detail__brand__label
+            %label ブランド
+            %span 任意
+          .form-detail__brand__input
+            %input#item_brand{name: "item[brand]", placeholder: "例）シャネル", type: "text"}/
+        .form-detail__status
+          .form-detail__status__label
+            %label 商品の状態
+            %span 必須
+          .form-detail__status__input
+            %select#item_status{name: "item[status]"}
+              %option{value: ""} 選択して下さい
+              %option{value: "新品、未使用"} 新品、未使用
+              %option{value: "未使用に近い"} 未使用に近い
+              %option{value: "目立った傷や汚れなし"} 目立った傷や汚れなし
+              %option{value: "やや傷や汚れあり"} やや傷や汚れあり
+              %option{value: "傷や汚れあり"} 傷や汚れあり
+              %option{value: "全体的に状態が悪い"} 全体的に状態が悪い
+      .form-shipping
+        .form-shipping__title
+          %p 配送について
+        .form-shipping__charge
+          .form-shipping__charge__label
+            %label 配送料の負担
+            %span 必須
+          .form-shipping__charge__input
+            %select#item_delivery_charge_bearer{name: "item[delivery_charge_bearer]"}
+              %option{value: ""} 選択して下さい
+              %option{value: "送料込み（出品者負担）"} 送料込み（出品者負担）
+              %option{value: "着払い（購入者負担）"} 着払い（購入者負担）
+        .form-shipping__area
+          .form-shipping__area__label
+            %label 発送元の地域
+            %span 必須
+          .form-shipping__area__input
+            %span.form-shipping__area__input__lavel 都道府県 
+            .form-shipping__area__input.icon-relative
+              = f.collection_select(:prefecture_id, Prefecture.all, :id , :name, prompt: "選択して下さい", class: 'prefecture')
+        .form-shipping__days
+          .form-shipping__days__label
+            %label 発送までの日数
+            %span 必須
+          .form-shipping__days__input
+            %select#item_delivery_days{:name => "item[delivery_days]"}
+              %option{value: ""} 選択して下さい
+              %option{value: "1日〜2日で発送"} 1日〜2日で発送
+              %option{value: "2日〜3日で発送"} 2日〜3日で発送
+              %option{value: "3日〜4日で発送"} 3日〜4日で発送
+              %option{value: "4日〜7日で発送"} 4日〜7日で発送
+      .form-price
+        .form-price__title
+          %p 価格（¥300~9,999,999
+        .form-price__value
+          .form-price__value__left
+            %label 販売価格
+            %span 必須
+          .form-price__value__right
+            %span ¥
+            %input#item_price{name: "item[price]", placeholder: "0", type: "text"}/
+      .form-btn
+        .form-btn__top
+          %input.form-btn__top{"data-disable-with" => "出品する", name: "commit", type: "submit", value: "出品する"}/
+        .form-btn__midle
+          = link_to "#" do
+            下書きに保存
+        .form-btn__bottom
+          = link_to "/" do
+            もどる
+      .form-term
+        禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+  .devise__footer
+    .devise__footer__nav
+      %ul
+        %li プライバシーポリシー
+        %li FURIMA利用規約
+        %li 特定商取引に関する表記
+    = link_to "/" do
+      = image_tag src="/assets/material/logo/logo-white.png"
+    .devise__footer__copywirte
+      %small
+        © FURIMA, Inc.
