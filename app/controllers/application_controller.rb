@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  # before_action :set_parents
 
-private
+  private
 
   def production?
     Rails.env.production?
@@ -13,4 +15,14 @@ private
       password == Rails.application.credentials[:basic_auth][:pass]
     end
   end
+
+  def set_parents
+    @parents = Category.where(ancestry: nil)
+  end
+
+  protected
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  end
+  
 end
