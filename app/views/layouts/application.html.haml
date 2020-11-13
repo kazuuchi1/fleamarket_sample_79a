@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
     %title FleamarketSample79a
     = csrf_meta_tags
     = csp_meta_tag
@@ -15,7 +15,7 @@
             %a{ href: '#' }
               = image_tag "logo.png"
           .search
-            %form{:action => "#", :method => "get"}
+            %form{action: "#",method: "get"}
               %input.searchbox{"placeholder": "キーワードから探す"}
               %button{"type": "submit"}
                 .buttonicon
