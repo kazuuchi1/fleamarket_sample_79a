@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :create]
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-private
+  private
 
   def production?
     Rails.env.production?
@@ -12,5 +14,9 @@ private
       username == Rails.application.credentials[:basic_auth][:user] &&
       password == Rails.application.credentials[:basic_auth][:pass]
     end
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 end
