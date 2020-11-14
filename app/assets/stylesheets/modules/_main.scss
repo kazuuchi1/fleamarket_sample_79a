@@ -31,28 +31,15 @@
         line-height: 1.77778;
         margin: 16px 0 0 0;
       }
-      .content-btn{
+      .inner__icon{
         display: flex;
-        margin: 24px 0 0 0;
-        a.abtn{
+        a{
           margin-right: 10px;
-          width: 180px;
-          img{
-            width: 100%;
-            vertical-align: bottom;
-          }
-          &.abtn:hover{
-            opacity: 0.5;
-          }
-        }
-        a.bbtn{
-          width: 180px;
-          img{
-            width: 100%;
-            vertical-align: bottom;
-          }
-          &.bbtn:hover{
-            opacity: 0.5;
+          .inner__icon2{
+            width: 180px;
+            &.inner__icon2:hover{
+              opacity: 0.5;
+            }
           }
         }
       }

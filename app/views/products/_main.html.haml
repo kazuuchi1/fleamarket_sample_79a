@@ -6,11 +6,9 @@
         FURIMAはだれでもかんたんに出品・購入できる
         %br 
         フリマアプリです
-      .content-btn
-        %a.abtn{ href: '#' }
-          = image_tag "logoa.png"
-        %a.bbtn{ href: '#' }
-          = image_tag "logog.png"
+      .inner__icon
+        = link_to image_tag("logoa.png", class:"inner__icon2"), "#"
+        = link_to image_tag("logog.png", class:"inner__icon2"), "#"
   %section.topsecound
     %h2.subtitle FURIMAが選ばれる3つの理由
     %ul.topsecound-lists
@@ -71,7 +69,7 @@
     %h2.kategorihead ピックアップカテゴリー
     .productbox
       .productboxhead
-        %a{ href: '#' }
+        = link_to "#" do
           %h3.title 新規投稿商品
       .productlists
         .productlist
@@ -91,7 +89,7 @@
     %h2.kategorihead ピックアップブランド
     .productbox
       .productboxhead
-        %a{ href: '#' }
+        = link_to "#" do
           %h3.title アーカイバ
       .productlists
         .productlist
