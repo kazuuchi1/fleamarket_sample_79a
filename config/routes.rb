@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'top/index'
+  # get '/index'
   #root 'items#index'
   # root 'buyers#new'
-   root 'top#index'
+   root 'products#index'
   resources :buyers, only: [:new, :create]
 end
