@@ -1,7 +1,7 @@
 !!!
 .devise__header
   = link_to "/" do
-    = image_tag src="/assets/material/logo/logo.png"
+    = image_tag src="public/assets/material/logo/logo.png"
 .wrapper
   .form-new
     = form_with model: @products do |f|
@@ -17,7 +17,7 @@
           .label-content
             %label.label-box{for: "item_item_images_attributes_0_src"}
               %pre.label-box-visible
-                = image_tag src="/assets/material/icon/icon_camera.png", size: "35x35"
+                = image_tag src="public/assets/material/icon/icon_camera.png", size: "35x35"
           .hidden-content
             %input#item_item_images_attributes_0_src.hidden-field.new-image{name: "item[item_images_attributes][0][src]", type: "file"}/
             %input#item_item_images_attributes_1_src.hidden-field.new-image{name: "item[item_images_attributes][1][src]", type: "file"}/
@@ -129,7 +129,7 @@
         %li FURIMA利用規約
         %li 特定商取引に関する表記
     = link_to "/" do
-      = image_tag src="/assets/material/logo/logo-white.png"
+      = image_tag src="public/assets/material/logo/logo-white.png"
     .devise__footer__copywirte
       %small
         © FURIMA, Inc.
