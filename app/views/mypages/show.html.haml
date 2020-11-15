@@ -1,0 +1,76 @@
+.Main
+  .Header
+    .TopLogoImage
+    
+  .Content1
+    = render "sidebar"
+    .Content2     
+      .user-icon
+        =link_to "", class: "user-icon__area" do
+          .user-icon__area__figure
+            = image_tag "material/icon/member_photo_noimage_thumb.png", alt: "", class: "user-icon__area__figure__img", height: "60px",width: "60px"      
+          .user-icon__area__name name
+          .user-icon__area__information
+            .user-icon__area__information__evaluation
+              評価
+              %span.user-icon__area__information__evaluation__number 0
+            .user-icon__area__information__exhibits
+              出品数
+              %span.user-icon__area__information__exhibits__number 0
+      .todo
+        .mypage-tabs
+          =link_to "#", class: "mypage-tabs__tag1" do
+            お知らせ
+          =link_to "#", class: "mypage-tabs__tag2" do
+            やることリスト
+        .tab-content
+          .tab-content__body
+            =link_to "#", class: "tab-content__body__list" do
+              = image_tag "material/logo/logo.png", alt: "", class: "tab-content__body__list__img"          
+              .tab-content__body__list__item
+                .tab-content__body__list__item__text nameさんが「name」にいいね！しました                          
+                %span 21 時間前
+          
+          .tab-content__body
+            =link_to "#", class: "tab-content__body__list" do
+              = image_tag "material/logo/logo.png", alt: "", class: "tab-content__body__list__img"          
+              .tab-content__body__list__item
+                .tab-content__body__list__item__text nameさんが「name」にいいね！しました                          
+                %span 21 時間前
+
+          .tab-content__body
+            =link_to "#", class: "tab-content__body__list" do
+              = image_tag "material/logo/logo.png", alt: "", class: "tab-content__body__list__img"          
+              .tab-content__body__list__item
+                .tab-content__body__list__item__text nameさんが「name」にいいね！しました                          
+                %span 21 時間前       
+      .bought-items
+        .bought-items__head 購入した商品
+        .tabs
+          =link_to "#", class: "now-traiding" do
+            取引中
+          =link_to "#", class: "past-traiding" do
+            過去の取引
+        .tab-content
+          .item-list__now-traiding
+            取引中の商品がありません
+          .item-list__past-traiding
+          
+  .Footer
+    .Terms
+      %ul.Terms__Links
+        %li.Terms__Links--PrivacyPolicy
+          = link_to "#", class: 'Link' do
+            プライバシーポリシー
+        %li.Terms__Links--TermsOfService
+          = link_to "#", class: 'Link' do
+            FURIMA利用規約
+        %li.Terms__Links--NotationRelatedToSpecificCommercialTransactions
+          = link_to "#", class: 'Link' do
+            特定商取引に関する表記
+    .BottomLogoImage
+    .Copyright
+      © FURIMA
+    
+  
+

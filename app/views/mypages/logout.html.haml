@@ -1,0 +1,23 @@
+.main
+  .Header
+    .TopLogoImage
+  .Content1
+    = render "sidebar"   
+    .logout
+      .logout__area
+        = link_to "ログアウト", "#", method: :delete, class: "logout__area__btn"
+  .Footer
+    .Terms
+      %ul.Terms__Links
+        %li.Terms__Links--PrivacyPolicy
+          = link_to "#", class: 'Link' do
+            プライバシーポリシー
+        %li.Terms__Links--TermsOfService
+          = link_to "#", class: 'Link' do
+            FURIMA利用規約
+        %li.Terms__Links--NotationRelatedToSpecificCommercialTransactions
+          = link_to "#", class: 'Link' do
+            特定商取引に関する表記
+    .BottomLogoImage
+    .Copyright
+      © FURIMA

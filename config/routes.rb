@@ -39,4 +39,12 @@ Rails.application.routes.draw do
       get "grandchildren_category"
     end
   end
+  resources :mypages, only: [:show] do
+    collection do
+      get 'logout'
+    end
+  end
+  resources :cards, only: [:index]
+  resources :buyers, only: [:new, :create]
+  resources :products, only: [:show]
 end
