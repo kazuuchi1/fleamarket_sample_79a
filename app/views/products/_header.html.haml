@@ -1,0 +1,22 @@
+.header
+  .headerTitle
+    .mainheader
+      %h1.icon
+        = link_to image_tag("logo.png")
+      .search
+        %form{action: "#",method: "get"}
+          %input.searchbox{"placeholder": "キーワードから探す"}
+          %button{"type": "submit"}
+            .buttonicon
+              = image_tag "icon-search1.png"
+    .navclass
+      %ul.leftbar
+        %li.left-left
+          = link_to "カテゴリー","#"
+        %li.left-right
+          = link_to "ブランド","#"
+      %ul.rightbar
+        %li.right-left
+          = link_to "ログイン","#"
+        %li.right-right
+          = link_to "新規登録画面","#"
