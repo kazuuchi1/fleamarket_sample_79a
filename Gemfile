@@ -9,6 +9,8 @@ gem 'rails', '~> 6.0.0'
 gem 'mysql2', '>= 0.4.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+# Use haml for stylesheets
+gem "haml-rails", ">= 1.0", '<= 2.0.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -65,6 +67,15 @@ group :production do
 end
 
 gem 'haml-rails', '>= 1.0', '<= 2.0.1'
+
 gem 'devise'
+gem 'erb2haml'
+
+gem 'ancestry'
+
+gem 'carrierwave'
+gem 'mini_magick'
+
+gem 'bootstrap-sass'
 gem 'active_hash'
 gem 'font-awesome-sass'

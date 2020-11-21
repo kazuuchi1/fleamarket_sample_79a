@@ -1,0 +1,26 @@
+.header
+  .headerTitle
+    .mainheader
+      %h1.icon
+        = link_to image_tag("logo.png")
+      .search
+        %form{action: "#",method: "get"}
+          %input.searchbox{"placeholder": "キーワードから探す"}
+          %button{"type": "submit"}
+            .buttonicon
+              = image_tag "icon-search1.png"
+    .navclass
+      %ul.leftbar
+        %li.left-left
+          = link_to "カテゴリー","#"
+        %li.left-right
+          = link_to "ブランド","#"
+      %ul.rightbar
+        %li.right-left
+          - unless user_signed_in?
+            = link_to "ログイン", new_user_session_path, class: "post"
+          - if user_signed_in?
+            = link_to  "ログアウト", destroy_user_session_path, method: :delete
+        %li.right-right
+          - unless user_signed_in?
+            = link_to "新規登録画面", new_user_registration_path, class: "post"

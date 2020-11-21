@@ -3,52 +3,61 @@
     .TopContent
       .ItemBox
         %h2.ItemBox__Name
-          %p テスト
+          %p
+            = @product.name
         .ItemBox__Images
           %ul.ItemBox__Images--TopImage
             %li
+              = image_tag @product_image.image, class: 'TopImage'
           %ul.ItemBox__Images--BottomImage
-            %li.Image1
-            %li.Image2
+            - @product_images.each do |images|
+              %li
+                = image_tag images.image, class: 'BottomImage'
         .ItemBox__Price
           .ItemBox__Price--Price
-            ¥2000
+            = number_to_currency(@product.price, precision: 0, unit: "￥")
           .ItemBox__Price--Detail
-            (税込) 送料込み
+            = @product.shipping_cost
         .ItemBox__Detail
-          テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+          = @product.description
         .ItemBox__Table
           %table
             %tr 
               %th 出品者
-              %td テスト
+              %td
+                = @product.user.name
             %tr
               %th カテゴリー
               %td
-                = link_to "#", class: 'Link' do
-                  %p レディース
-                  %p トップス
-                  %p ワンピース
+                - @categories.each do |category|
+                  = link_to "#", class: 'Link' do
+                    = category.name
+                    %br/
             %tr
               %th ブランド
-              %td 
+              %td
+                = @product.brand.name
             %tr
               %th 商品のサイズ
-              %td M
+              %td
+                = @product.size
             %tr
               %th 商品の状態
-              %td 新品/未使用
+              %td
+                = @product.status
             %tr
               %th 配送料の負担
-              %td 送料込み（出品者負担）
+              %td
+                = @product.shipping_cost
             %tr
               %th 発送元の地域
               %td
                 = link_to "#", class: 'Link' do
-                  東京都
+                  = @product.prefecture.name
             %tr
               %th 発送日の目安
-              %td 1-2日で発送
+              %td
+                = @product.days
         %ul.ItemBox__Optional
           %li.Favorite
             = link_to "#", class: 'Favorite__Btn' do
@@ -58,6 +67,18 @@
             = link_to "#", class: 'InappropriateProductReporting__Btn' do
               = icon('fas', 'flag')
               不適切な商品の通報
+      - if user_signed_in? && current_user.id == @product.user_id
+        .EditBox
+          = link_to "#", class: 'EditBox__Btn EditBox__Btn--EditBtn' do
+            商品の編集
+          .OR
+            or
+          = link_to "#", class: 'EditBox__Btn EditBox__Btn--DeleteBtn' do
+            商品の削除
+      - else !(user_signed_in?) || current_user.id ==! @product.user_id
+        .ToBuyBox
+          = link_to new_buyer_path(@product.id), class: 'ToBuyBox__ToBuyBtn' do
+            購入画面に進む
       -# 《⬇︎コメント機能は実装するかわからないので形だけ》
       .CommentBox
         -# = form_with, model: @comment, class: 'CommentForm', local: true do |f|

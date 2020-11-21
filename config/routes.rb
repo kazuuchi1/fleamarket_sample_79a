@@ -8,17 +8,17 @@ Rails.application.routes.draw do
     get '/users/sign_out', to: 'devise/sessions#destroy'
   end
 
-  resources :users, only: :show do
-    collection do
-      get 'edit_profile', 'edit_address'
-      get 'sell_items'
-      get 'bought_items'
-      patch 'update_profile', 'update_address'
-      get 'favorite_items'
-    end
-  end
+  # resources :users, only: :show do
+  #   collection do
+  #     get 'edit_profile', 'edit_address'
+  #     get 'sell_items'
+  #     get 'bought_items'
+  #     patch 'update_profile', 'update_address'
+  #     get 'favorite_items'
+  #   end
+  # end
  
-  root 'items#index'
+  root to: 'products#index'
 
   resources :payment_cards, only: [:new, :create, :index, :destroy]
   resources :items do
@@ -39,12 +39,19 @@ Rails.application.routes.draw do
       get "grandchildren_category"
     end
   end
+
+
+  #  root 'products#index'
+
+  # devise_for :users
+  # root 'products#index'
   resources :mypages, only: [:show] do
     collection do
       get 'logout'
     end
   end
   resources :cards, only: [:index]
+
   resources :buyers, only: [:new, :create]
-  resources :products, only: [:show]
+  resources :products, only: [:index, :new, :show]
 end
