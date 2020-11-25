@@ -41,10 +41,7 @@ Rails.application.routes.draw do
   end
 
 
-  #  root 'products#index'
 
-  # devise_for :users
-  # root 'products#index'
   resources :mypages, only: [:show] do
     collection do
       get 'logout'
