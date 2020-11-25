@@ -40,8 +40,6 @@ Rails.application.routes.draw do
     end
   end
 
-
-
   resources :mypages, only: [:show] do
     collection do
       get 'logout'
