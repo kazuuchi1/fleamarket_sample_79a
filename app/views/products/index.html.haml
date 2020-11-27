@@ -1,8 +1,7 @@
-
+.haeader
+  =render "header"
 .main
   = render "main"
-  = render "subheader"
-
 .User
   - unless user_signed_in?
     = link_to user_session_path, method: :post do
@@ -24,4 +23,3 @@
         .Favorites
           = icon('fas', 'star')
           1
-
