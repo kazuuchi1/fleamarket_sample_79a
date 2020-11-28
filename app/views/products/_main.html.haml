@@ -71,36 +71,38 @@
       = link_to "#" do
         %h3.title 新規投稿商品
     .productlists
-      .productlist
-        = link_to "#" do
-          %figure.productlist__img
-            = image_tag 'sanma.png',class: "images"
-          .productlist__body
-            %h3.name さんま
-            .details
-              %ul
-                %li 10000円
-                %li
-                  %i.fa.fa-star 
-                  1
-              %p (税込)
+      - @products.each do |product|
+        .Products
+          = link_to product_path(product.id), class: 'Product' do
+            = image_tag @product_images.find_by(product_id: product.id).image, class: 'ItemImage'
+            .ItemDetail__Name
+              %h3
+                = product.name
+            .ItemDetail__Details
+              .Price
+                = product.price
+                %p (税込)
+              .Favorites
+                = icon('fas', 'star')
+                1
 %section.productbrnd
   %h2.kategorihead ピックアップブランド
   .productbox
     .productboxhead
       = link_to "#" do
         %h3.title アーカイバ
-    .productlists
-      .productlist
-        = link_to "#" do
-          %figure.productlist__img
-            = image_tag 'sanma.png',class: "images"
-          .productlist__body
-            %h3.name さんま
-            .details
-              %ul
-                %li 10000円
-                %li
-                  %i.fa.fa-star 
-                  1
+  .productlists
+    - @products.each do |product|
+      .Products
+        = link_to product_path(product.id), class: 'Product' do
+          = image_tag @product_images.find_by(product_id: product.id).image, class: 'ItemImage'
+          .ItemDetail__Name
+            %h3
+              = product.name
+          .ItemDetail__Details
+            .Price
+              = product.price
               %p (税込)
+            .Favorites
+              = icon('fas', 'star')
+              1

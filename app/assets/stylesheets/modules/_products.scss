@@ -3,33 +3,33 @@
 }
 
 // 【index】
-.Product {
-  width: 233px;
-  height: 245px;
-  text-decoration: none;
-  display: block;
-  background-color: #fff;
-  .ItemImage {
-    width: 233px;
-    height: 150px;
-  }
-  .ItemDetail {
-    padding: 16px;
-    color: #333;
-    &__Details {
-      margin-top: 3px;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      .Price {
-        font-family: Arial;
-        p {
-          font-size: 10px;
-        }
-      }
-    }
-  }
-}
+// .Product {
+//   width: 233px;
+//   height: 245px;
+//   text-decoration: none;
+//   display: block;
+//   background-color: #fff;
+//   .ItemImage {
+//     width: 233px;
+//     height: 150px;
+//   }
+//   .ItemDetail {
+//     padding: 16px;
+//     color: #333;
+//     &__Details {
+//       margin-top: 3px;
+//       font-weight: bold;
+//       display: flex;
+//       justify-content: space-between;
+//       .Price {
+//         font-family: Arial;
+//         p {
+//           font-size: 10px;
+//         }
+//       }
+//     }
+//   }
+// }
 
 
 // 【show】
