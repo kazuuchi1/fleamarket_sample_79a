@@ -33,6 +33,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
   resources :categories, only: [:index, :show] do
     collection do
       get "children_category"
@@ -45,8 +46,8 @@ Rails.application.routes.draw do
       get 'logout'
     end
   end
+  
   resources :cards, only: [:index]
-
   resources :buyers, only: [:new, :create]
   resources :products, only: [:index, :new, :show]
 end
