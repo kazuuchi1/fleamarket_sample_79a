@@ -256,30 +256,36 @@
       margin: 26px auto;
       display: flex;
       justify-content: center;
-      .Product {
-        width: 233px;
-        height: 245px;
-        text-decoration: none;
-        background-color: #fff;
-        .ItemImage {
+      .Products {
+        .Product {
           width: 233px;
-          height: 150px;
-        }
-        .ItemDetail {
-          padding: 16px;
-          color: #333;
-          &__Details {
-            margin-top: 3px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            .Price {
-              font-family: Arial;
-              p {
-                font-size: 10px;
+          height: 245px;
+          text-decoration: none;
+          background-color: #fff;
+          .ItemImage {
+            width: 233px;
+            height: 150px;
+          }
+          .ItemDetail {
+            padding: 16px;
+            color: #333;
+            background-color: white;
+            &__Details {
+              margin-top: 3px;
+              font-weight: bold;
+              display: flex;
+              justify-content: space-between;
+              .Price {
+                font-family: Arial;
+                p {
+                  font-size: 10px;
+                }
               }
             }
           }
+        }
+        &:hover {
+          opacity: 0.6;
         }
       }
     }
@@ -313,30 +319,36 @@
       margin: 26px auto;
       display: flex;
       justify-content: center;
-      .Product {
-        width: 233px;
-        height: 245px;
-        text-decoration: none;
-        background-color: #fff;
-        .ItemImage {
+      .Products {
+        .Product {
           width: 233px;
-          height: 150px;
-        }
-        .ItemDetail {
-          padding: 16px;
-          color: #333;
-          &__Details {
-            margin-top: 3px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            .Price {
-              font-family: Arial;
-              p {
-                font-size: 10px;
+          height: 245px;
+          text-decoration: none;
+          background-color: #fff;
+          .ItemImage {
+            width: 233px;
+            height: 150px;
+          }
+          .ItemDetail {
+            padding: 16px;
+            color: #333;
+            background-color: white;
+            &__Details {
+              margin-top: 3px;
+              font-weight: bold;
+              display: flex;
+              justify-content: space-between;
+              .Price {
+                font-family: Arial;
+                p {
+                  font-size: 10px;
+                }
               }
             }
           }
+        }
+        &:hover {
+          opacity: 0.6;
         }
       }
     }

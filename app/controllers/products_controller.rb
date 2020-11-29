@@ -15,5 +15,14 @@ class ProductsController < ApplicationController
     @product_images = ProductImage.all.where(product_id: params[:id])
   end
 
-end
+  def destroy
+    @product = Product.find(params[:id])
+    if @product.user.id == current_user.id
+      @product.destroy
+      redirect_to root_path
+    else
+      render root_path
+    end
+  end
 
+end

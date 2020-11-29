@@ -75,16 +75,17 @@
         .Products
           = link_to product_path(product.id), class: 'Product' do
             = image_tag @product_images.find_by(product_id: product.id).image, class: 'ItemImage'
-            .ItemDetail__Name
-              %h3
-                = product.name
-            .ItemDetail__Details
-              .Price
-                = product.price
-                %p (税込)
-              .Favorites
-                = icon('fas', 'star')
-                1
+            .ItemDetail
+              .ItemDetail__Name
+                %h3
+                  = product.name
+              .ItemDetail__Details
+                .Price
+                  = product.price
+                  %p (税込)
+                .Favorites
+                  = icon('fas', 'star')
+                  1
 %section.productbrnd
   %h2.kategorihead ピックアップブランド
   .productbox
@@ -96,13 +97,14 @@
       .Products
         = link_to product_path(product.id), class: 'Product' do
           = image_tag @product_images.find_by(product_id: product.id).image, class: 'ItemImage'
-          .ItemDetail__Name
-            %h3
-              = product.name
-          .ItemDetail__Details
-            .Price
-              = product.price
-              %p (税込)
-            .Favorites
-              = icon('fas', 'star')
-              1
+          .ItemDetail
+            .ItemDetail__Name
+              %h3
+                = product.name
+            .ItemDetail__Details
+              .Price
+                = product.price
+                %p (税込)
+              .Favorites
+                = icon('fas', 'star')
+                1
