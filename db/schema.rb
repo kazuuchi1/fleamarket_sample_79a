@@ -76,9 +76,7 @@ ActiveRecord::Schema.define(version: 2020_11_12_203034) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "prefecture_id", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
-    t.index ["prefecture_id"], name: "index_products_on_prefecture_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -96,11 +94,9 @@ ActiveRecord::Schema.define(version: 2020_11_12_203034) do
   end
 
   add_foreign_key "addresses", "users"
-
   add_foreign_key "product_categories", "categories"
   add_foreign_key "product_categories", "products"
   add_foreign_key "product_images", "products"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "users"
-
 end
