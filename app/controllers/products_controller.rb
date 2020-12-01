@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @product_images = ProductImage.all
+    @purchase_history = PurchaseHistory.all
   end
 
   def new

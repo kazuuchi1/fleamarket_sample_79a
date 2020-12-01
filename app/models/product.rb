@@ -5,6 +5,7 @@ class Product < ApplicationRecord
   has_many :product_images, dependent: :destroy
   has_many :product_categories, dependent: :destroy
   has_many :categories, through: :product_categories
+  has_one :purchase_history
 
   mount_uploader :product_image, ImageUploader
 
