@@ -252,10 +252,11 @@
       }
     }
     .productlists{
-      width: 780px;
+      width: 1165px;
       margin: 26px auto;
       display: flex;
-      justify-content: center;
+      justify-content: start;
+      flex-wrap: wrap;
       .PurchasedProducts {
         position: relative;
         .SoldOutMsg {
@@ -357,10 +358,11 @@
       }
     }
     .productlists{
-      width: 780px;
+      width: 1165px;
       margin: 26px auto;
       display: flex;
-      justify-content: center;
+      justify-content: start;
+      flex-wrap: wrap;
       .PurchasedProducts {
         position: relative;
         .SoldOutMsg {

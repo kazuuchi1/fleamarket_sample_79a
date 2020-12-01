@@ -84,8 +84,9 @@
                     = product.name
                 .ItemDetail__Details
                   .Price
-                    = product.price
+                    = "#{product.price}円"
                     %p (税込)
+                    -# ↑表記が確定したら繋げる
                   .Favorites
                     = icon('fas', 'star')
                     1
@@ -99,8 +100,9 @@
                     = product.name
                 .ItemDetail__Details
                   .Price
-                    = product.price
+                    = "#{product.price}円"
                     %p (税込)
+                    -# ↑表記が確定したら繋げる
                   .Favorites
                     = icon('fas', 'star')
                     1
