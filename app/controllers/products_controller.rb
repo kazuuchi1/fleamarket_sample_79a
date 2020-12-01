@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
     @categories = @product.categories
     @product_image = ProductImage.find_by(product_id: params[:id])
     @product_images = ProductImage.all.where(product_id: params[:id])
+    @purchase_history = PurchaseHistory.find_by(product_id: params[:id])
   end
 
   def destroy

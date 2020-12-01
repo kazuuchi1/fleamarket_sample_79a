@@ -161,6 +161,22 @@
           display: block;
         }
       }
+      .SoldOutBox {
+        margin-top: 10px;
+        padding: 25px 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: #fff;
+        &__Msg {
+        width: 650px;
+        padding: 13px 0px;
+        text-align: center;
+        border-radius: 5px;
+        color: honeydew;
+        background-color: grey;
+        }
+      }
       .CommentBox {
         margin-top: 10px;
         padding: 25px 0px;
