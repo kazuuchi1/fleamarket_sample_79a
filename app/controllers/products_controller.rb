@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @product_images = ProductImage.all
+    @purchase_history = PurchaseHistory.all
   end
 
   def new
@@ -13,6 +14,7 @@ class ProductsController < ApplicationController
     @categories = @product.categories
     @product_image = ProductImage.find_by(product_id: params[:id])
     @product_images = ProductImage.all.where(product_id: params[:id])
+    @purchase_history = PurchaseHistory.find_by(product_id: params[:id])
   end
 
   def destroy

@@ -252,10 +252,53 @@
       }
     }
     .productlists{
-      width: 780px;
+      width: 1165px;
       margin: 26px auto;
       display: flex;
-      justify-content: center;
+      justify-content: start;
+      flex-wrap: wrap;
+      .PurchasedProducts {
+        position: relative;
+        .SoldOutMsg {
+          width: 200px;
+          height: 30px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 30px;
+          color: #FF0000;
+          position: absolute;
+          top: 57px;
+          left: 16px;
+        }
+        .Product {
+          width: 233px;
+          height: 245px;
+          text-decoration: none;
+          background-color: #fff;
+          opacity: 0.3;
+          .ItemImage {
+            width: 233px;
+            height: 150px;
+          }
+          .ItemDetail {
+            padding: 16px;
+            color: #333;
+            background-color: white;
+            &__Details {
+              margin-top: 3px;
+              font-weight: bold;
+              display: flex;
+              justify-content: space-between;
+              .Price {
+                font-family: Arial;
+                p {
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
       .Products {
         .Product {
           width: 233px;
@@ -315,10 +358,53 @@
       }
     }
     .productlists{
-      width: 780px;
+      width: 1165px;
       margin: 26px auto;
       display: flex;
-      justify-content: center;
+      justify-content: start;
+      flex-wrap: wrap;
+      .PurchasedProducts {
+        position: relative;
+        .SoldOutMsg {
+          width: 200px;
+          height: 30px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 30px;
+          color: #FF0000;
+          position: absolute;
+          top: 57px;
+          left: 16px;
+        }
+        .Product {
+          width: 233px;
+          height: 245px;
+          text-decoration: none;
+          background-color: #fff;
+          opacity: 0.3;
+          .ItemImage {
+            width: 233px;
+            height: 150px;
+          }
+          .ItemDetail {
+            padding: 16px;
+            color: #333;
+            background-color: white;
+            &__Details {
+              margin-top: 3px;
+              font-weight: bold;
+              display: flex;
+              justify-content: space-between;
+              .Price {
+                font-family: Arial;
+                p {
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
       .Products {
         .Product {
           width: 233px;
