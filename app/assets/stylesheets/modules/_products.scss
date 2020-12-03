@@ -2,35 +2,6 @@
   box-sizing: border-box;
 }
 
-// 【index】
-.Product {
-  width: 233px;
-  height: 245px;
-  text-decoration: none;
-  display: block;
-  background-color: #fff;
-  .ItemImage {
-    width: 233px;
-    height: 150px;
-  }
-  .ItemDetail {
-    padding: 16px;
-    color: #333;
-    &__Details {
-      margin-top: 3px;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      .Price {
-        font-family: Arial;
-        p {
-          font-size: 10px;
-        }
-      }
-    }
-  }
-}
-
 
 // 【show】
 .ShowMain {
@@ -188,6 +159,22 @@
           color: #fff;
           background-color: #3CCACE;
           display: block;
+        }
+      }
+      .SoldOutBox {
+        margin-top: 10px;
+        padding: 25px 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: #fff;
+        &__Msg {
+        width: 650px;
+        padding: 13px 0px;
+        text-align: center;
+        border-radius: 5px;
+        color: honeydew;
+        background-color: grey;
         }
       }
       .CommentBox {

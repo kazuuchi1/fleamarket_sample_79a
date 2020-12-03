@@ -1,4 +1,17 @@
 @import "reset";
+@import "modules/color";
+@import "modules/header";
+@import "modules/footer";
+@import "modules/items_index";
+@import "modules/items_new";
+@import "modules/purchases_buy";
+@import "modules/user";
+@import "modules/users_show";
+@import "modules/flash";
+@import "modules/items_show";
+@import "modules/payment_cards_new";
+@import "modules/payment_cards_index";
+@import "categories";
 @import "products";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -20,7 +33,6 @@ body {
 @import "modules/products";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "reset";
 @import "sidebar";
 @import "mypages";
 @import "cards";

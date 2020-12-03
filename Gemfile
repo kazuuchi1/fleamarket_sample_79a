@@ -78,6 +78,8 @@ gem 'mini_magick'
 
 gem 'bootstrap-sass'
 gem 'active_hash'
+
 gem 'font-awesome-sass'
 
 gem 'jquery-rails'
+
