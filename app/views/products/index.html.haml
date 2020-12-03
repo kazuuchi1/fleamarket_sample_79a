@@ -1,3 +1,24 @@
 .main
-  = render 'main'
-  = render 'subheader'
+  = render "main"
+  = render "subheader"
+-# .User
+-#   - unless user_signed_in?
+-#     = link_to user_session_path, method: :post do
+-#       ログイン
+-#   - if user_signed_in?
+-#     = link_to destroy_user_session_path, method: :delete do
+-#       ログアウト
+-# .Products
+-#   - @products.each do |product|
+-#     = link_to product_path(product.id), class: 'Product' do
+-#       = image_tag @product_images.find_by(product_id: product.id).image, class: 'ItemImage'
+-#       .ItemDetail__Name
+-#         %h3
+-#           = product.name
+-#       .ItemDetail__Details
+-#         .Price
+-#           = product.price
+-#           %p (税込)
+-#         .Favorites
+-#           = icon('fas', 'star')
+-#           1
