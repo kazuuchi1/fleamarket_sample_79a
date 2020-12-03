@@ -40,17 +40,36 @@
       .form-detail
         %p 商品の詳細
         .form-detail__category
-          .form-detail__category__label
-            %label カテゴリー
-            %span 必須
-          .form-detail__category__input
-            %select#category_select.select-default{name: "item[category_id]"}
-              %option{value: ""} 選択して下さい
-              %option{value: "1"} レディース
-              %option{value: "61"} メンズ
-              %option{value: "111"} ベビー/キッズ
-              %option{value: "149"} 本・音楽・ゲーム
-              %option{value: "190"} ハンドメイド
+          = form_with(model: @product, local: true) do |f|
+            .form-detail__category__label
+              %label カテゴリー
+              %span 必須
+            .form-detail__category__input
+              -# %select#category_select.select-default{name: "item[category_id]"}
+                -# %option{value: ""} 選択して下さい
+                -# %option{value: "1"} レディース
+                -# %option{value: "61"} メンズ
+                -# %option{value: "111"} ベビー/キッズ
+                -# %option{value: "149"} 本・音楽・ゲーム
+                -# %option{value: "190"} ハンドメイド
+              = f.select :category_id, options_for_select( @category_parent_array.map{|c| [c[:name], c[:id]]}),{include_blank: "選択してください"}, { class: "parent_category_box", id: "parent_category"}
+              -# = icon('fa', 'chevron-down')
+              .pulldown.item_input__body__category__children#children_box
+              .pulldown.item_input__body__category__grandchildren#grandchildren_box
+      .item_input__body
+        = form_with(model: @product, local: true) do |f|
+          .item_input__body__category#category_box
+            -# .pulldown#partent_box
+            -#   = f.select :category_id, options_for_select( @category_parent_array.map{|c| [c[:name], c[:id]]}),{include_blank: "選択してください"}, { class: "parent_category_box", id: "parent_category"}
+            -#   = icon('fa', 'chevron-down')
+
+            .pulldown.item_input__body__category__children#children_box
+              -#親カテゴリー選択によって子カテゴリー表示
+            .pulldown.item_input__body__category__grandchildren#grandchildren_box
+              -#子カテゴリー選択によって孫カテゴリー表示
+              -# .pulldown#size_selectbo
+              -#   =f.collection_select :size_id, Size.all, :id, :name, {include_blank: "選択してください"}, {class: "form-detail__category__input"}
+              -#   = icon('fa', 'chevron-down')
         .form-detail__brand
           .form-detail__brand__label
             %label ブランド
