@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   #   end
   # end
  
-  root to: 'products#index'
+  root 'products#index'
+  resources :products, except: :show
 
   resources :payment_cards, only: [:new, :create, :index, :destroy]
   resources :items do
