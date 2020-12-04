@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_12_203034) do
+
+# ActiveRecord::Schema.define(version: 2020_11_22_164208) do
+
+ActiveRecord::Schema.define(version: 2020_12_01_154416) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "last_name", null: false
@@ -36,10 +39,11 @@ ActiveRecord::Schema.define(version: 2020_11_12_203034) do
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -76,10 +80,15 @@ ActiveRecord::Schema.define(version: 2020_11_12_203034) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "prefecture_id", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
-    t.index ["prefecture_id"], name: "index_products_on_prefecture_id"
     t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "purchase_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "product_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_purchase_histories_on_product_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -96,11 +105,10 @@ ActiveRecord::Schema.define(version: 2020_11_12_203034) do
   end
 
   add_foreign_key "addresses", "users"
-
   add_foreign_key "product_categories", "categories"
   add_foreign_key "product_categories", "products"
   add_foreign_key "product_images", "products"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "users"
-
+  add_foreign_key "purchase_histories", "products"
 end

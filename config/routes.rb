@@ -8,6 +8,11 @@ Rails.application.routes.draw do
     get '/users/sign_out', to: 'devise/sessions#destroy'
   end
 
+
+  devise_for :users
+  root 'products#index'
+  resources :products, except: :show
+
   # resources :users, only: :show do
   #   collection do
   #     get 'edit_profile', 'edit_address'
@@ -17,9 +22,6 @@ Rails.application.routes.draw do
   #     get 'favorite_items'
   #   end
   # end
- 
-  root 'products#index'
-  resources :products, except: :show
 
   resources :payment_cards, only: [:new, :create, :index, :destroy]
   resources :items do
@@ -46,8 +48,27 @@ Rails.application.routes.draw do
       get 'logout'
     end
   end
+  # resources :product do
+  #   collection do
+  #     get 'category/get_category_children', to: 'prodacts#get_category_children', defaults: { format: 'json' }
+  #     get 'category/get_category_grandchildren', to: 'items#get_category_grandchildren', defaults: { format: 'json' }
+  #   end
+  # end
+  resources :products do
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+    member do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+  end
   resources :cards, only: [:index]
-
+ 
   resources :buyers, only: [:new, :create]
-  resources :products, only: [:index, :new, :show]
+
+  resources :products, only: [:index, :new, :show, :destroy]
+  
 end
+

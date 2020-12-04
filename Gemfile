@@ -82,3 +82,4 @@ gem 'active_hash'
 gem 'font-awesome-sass'
 
 gem 'jquery-rails'
+

@@ -362,6 +362,31 @@
           background-size: 18px;
           padding-right: 30px;
         }
+        // .tree{カテゴリードロップダウン用
+        //   z-index: 2;
+        //   position: absolute;
+        //   background-color: #fff;
+        //   width: 240px;
+        //   top: 40px;
+        //   display: none;
+        //   .category-parent{
+        //     background-color: #fff;
+        //     flex-direction: column;
+        //     position: relative;
+        //     .treeitem{
+        //       position: relative;
+        //         .category-child{
+        //           min-height: 480px;
+        //           background-color: #fff;
+        //           display: flex;
+        //           flex-direction: column;
+        //           position: absolute;
+        //           top: 0;
+        //           left: 240px;
+        //         }
+        //     }
+        //   }
+        // }
       }
       .left-right{
         a{

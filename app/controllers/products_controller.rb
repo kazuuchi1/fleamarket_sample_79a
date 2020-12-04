@@ -1,9 +1,13 @@
 class ProductsController < ApplicationController
+    before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
+    before_action :set_product, except: [:index, :new, :create]
   
   def index
     @products = Product.all
     @products = Product.includes(:images).order('created_at DESC')
     @product_images = ProductImage.all
+    @parents = Category.where(ancestry: nil) 
+    @purchase_history = PurchaseHistory.all
     # render action: :new
   end
 
@@ -25,14 +29,21 @@ class ProductsController < ApplicationController
   def edit
   end
 
+  def get_category_children
+    @category_children = Category.find(params[:parent_name]).children
+  end
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
   def show
     @product = Product.find(params[:id])
     @categories = @product.categories
     @product_image = ProductImage.find_by(product_id: params[:id])
-    @product_images = ProductImage.all.where(params[:ids])
+    @product_images = ProductImage.all.where(product_id: params[:id])
+    @purchase_history = PurchaseHistory.find_by(product_id: params[:id])
   end
-
-  before_action :set_product, except: [:index, :new, :create]
+    
 
   def update
     if @product.update(product_params)
@@ -44,10 +55,17 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    if @product.destroy
-      redirect_to :root
+    # if @product.destroy
+      # redirect_to :root
+    # else
+      # render :show
+    # end
+    @product = Product.find(params[:id])
+    if @product.user.id == current_user.id
+      @product.destroy
+      redirect_to root_path
     else
-      render :show
+      render root_path
     end
   end
 
@@ -60,5 +78,8 @@ class ProductsController < ApplicationController
   def set_product
     @product = Product.find(params[:id])
   end
+  
+  def set_category  
+    @category_parent_array = Category.where(ancestry: nil)
+  end
 end
-

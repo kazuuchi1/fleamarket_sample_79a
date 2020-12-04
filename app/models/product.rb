@@ -8,6 +8,8 @@ class Product < ApplicationRecord
   has_many :product_categories, dependent: :destroy
   has_many :categories, through: :product_categories
   has_many :images
+  has_one :purchase_history
+
 
   mount_uploader :src, ImageUploader
   belongs_to :products, optional: true
