@@ -14,7 +14,7 @@ class Product < ApplicationRecord
   validates :name, length: { maximum: 40 }
   validates :description, length: { maximum: 1000 }
   validates :price, numericality: { greater_than_or_equal_to: 300, less_than: 9999999 }
-  validates :size, :brand, :status, :shipping_cost, :prefecture_id, :days, exclusion: { in: %w(選択してください) }
+  validates :status, :shipping_cost, :prefecture_id, :days, exclusion: { in: %w(選択してください) }
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
