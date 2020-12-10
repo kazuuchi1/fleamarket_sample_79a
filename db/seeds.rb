@@ -346,3 +346,9 @@ others_9.children.create([{name: "すべて"}])
 
 categories = Category.create(name: "カテゴリー一覧")
 
+
+
+# サイズ
+Size.create(name: "S")
+Size.create(name: "M")
+Size.create(name: "L")

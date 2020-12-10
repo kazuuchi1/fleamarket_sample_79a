@@ -8,10 +8,7 @@ Rails.application.routes.draw do
     get '/users/sign_out', to: 'devise/sessions#destroy'
   end
 
-
-  devise_for :users
   root 'products#index'
-  resources :products, except: :show
 
   # resources :users, only: :show do
   #   collection do
@@ -68,7 +65,6 @@ Rails.application.routes.draw do
  
   resources :buyers, only: [:new, :create]
 
-  resources :products, only: [:index, :new, :show, :destroy]
+  resources :products, only: [:index, :new, :show, :destroy, :create]
   
 end
-

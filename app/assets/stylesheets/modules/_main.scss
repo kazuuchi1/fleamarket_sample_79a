@@ -257,7 +257,7 @@
       display: flex;
       justify-content: start;
       flex-wrap: wrap;
-      .PurchasedProducts {
+      .Products {
         position: relative;
         .SoldOutMsg {
           width: 200px;
@@ -266,6 +266,7 @@
           font-weight: bold;
           font-size: 30px;
           color: #FF0000;
+          opacity: 0.3;
           position: absolute;
           top: 57px;
           left: 16px;
@@ -274,8 +275,7 @@
           width: 233px;
           height: 245px;
           text-decoration: none;
-          background-color: #fff;
-          opacity: 0.3;
+          display: block;
           .ItemImage {
             width: 233px;
             height: 150px;
@@ -304,7 +304,7 @@
           width: 233px;
           height: 245px;
           text-decoration: none;
-          background-color: #fff;
+          display: block;
           .ItemImage {
             width: 233px;
             height: 150px;
@@ -363,7 +363,7 @@
       display: flex;
       justify-content: start;
       flex-wrap: wrap;
-      .PurchasedProducts {
+      .Products {
         position: relative;
         .SoldOutMsg {
           width: 200px;
@@ -372,6 +372,7 @@
           font-weight: bold;
           font-size: 30px;
           color: #FF0000;
+          opacity: 0.3;
           position: absolute;
           top: 57px;
           left: 16px;
@@ -380,8 +381,7 @@
           width: 233px;
           height: 245px;
           text-decoration: none;
-          background-color: #fff;
-          opacity: 0.3;
+          display: block;
           .ItemImage {
             width: 233px;
             height: 150px;
@@ -410,7 +410,7 @@
           width: 233px;
           height: 245px;
           text-decoration: none;
-          background-color: #fff;
+          display: block;
           .ItemImage {
             width: 233px;
             height: 150px;

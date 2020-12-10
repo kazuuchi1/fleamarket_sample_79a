@@ -1,39 +1,39 @@
 class ProductsController < ApplicationController
-    before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
-    before_action :set_product, except: [:index, :new, :create]
+  # before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
+  before_action :set_product, except: [:index, :new, :create]
   
   def index
-    @products = Product.all
-    @products = Product.includes(:images).order('created_at DESC')
+    @products = Product.all.order('created_at DESC')
+    # @products = Product.includes(:images).order('created_at DESC')
     @product_images = ProductImage.all
     @parents = Category.where(ancestry: nil) 
     @purchase_history = PurchaseHistory.all
-    # render action: :new
   end
 
   def new
     @product = Product.new
-    @product.product_images.build 
+    @product_image = @product.product_images.build
   end
 
   def create
     @product = Product.new(product_params)
-    if @product.save
-      redirect_to product_path(@product)
+    unless params[:product_images] == nil
+      if @product.save
+        params[:product_images]['image'].each do |i|
+          @product_image = @product.product_images.create!(image: i)
+        end
+        redirect_to product_path(@product)
+      else
+        @product.product_images.build
+        render :new
+      end
     else
+      @product.product_images.build
       render :new
-      flash.now[:alert] = "商品出品に失敗しました"
     end
   end
 
   def edit
-  end
-
-  def get_category_children
-    @category_children = Category.find(params[:parent_name]).children
-  end
-  def get_category_grandchildren
-    @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
   def show
@@ -55,11 +55,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    # if @product.destroy
-      # redirect_to :root
-    # else
-      # render :show
-    # end
     @product = Product.find(params[:id])
     if @product.user.id == current_user.id
       @product.destroy
@@ -69,10 +64,18 @@ class ProductsController < ApplicationController
     end
   end
 
+  def get_category_children
+    @category_children = Category.find(params[:parent_name]).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :category, :brand, :status, :shipping_method, :prefecture_id, :days, :price, images_attributes: [:src, :_destroy, :id])
+    params.require(:product).permit(:name, :description, :brand_id, :size_id, :status, :shipping_cost,:prefecture_id, :days, :price, product_images_attributes: [:image]).merge(user_id: current_user.id)
   end
 
   def set_product
