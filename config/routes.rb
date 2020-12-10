@@ -33,6 +33,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
   resources :categories, only: [:index, :show] do
     collection do
       get "children_category"
@@ -45,6 +46,7 @@ Rails.application.routes.draw do
       get 'logout'
     end
   end
+
   # resources :product do
   #   collection do
   #     get 'category/get_category_children', to: 'prodacts#get_category_children', defaults: { format: 'json' }
@@ -61,8 +63,7 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
-  resources :cards, only: [:index]
- 
+
   resources :buyers, only: [:new, :create]
 
   resources :products, only: [:index, :new, :show, :destroy, :create]
