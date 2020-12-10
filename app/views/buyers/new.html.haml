@@ -1,0 +1,64 @@
+.Main
+  .Header
+    .TopLogoImage
+      = link_to root_path do
+        = image_tag asset_path('logo.png'), class: 'TopLogoImage__logo'
+  .Content
+    .PurchaseDetails
+      -# = form_with, model: @buyer, class: 'Form', local: true do |f|
+      .Form
+        .Form__Name
+          購入内容の確認
+        .Form__Products
+          .Form__Products--Image
+          .Form__Products--Information
+            .ProductsName
+              スカートワンピース
+            .ProductsPrice
+              %span.ProductsPrice__Shipping 送料込み (税込)
+              %span.ProductsPrice__Price ¥2,000
+        .Form__Price
+          .Form__Price--Text
+            支払い金額
+          .Form__Price--Number
+            ¥2,000
+        .Form__PaymentMethod
+          .Form__PaymentMethod--Left
+            %span 支払い方法
+            %ul
+              %li クレジットカード
+              %li ************1234
+              %li 有効期限 01 / 25
+          .Form__PaymentMethod--Right
+            = link_to "#", class: 'ChangeButton' do
+              変更する >
+        .Form__ShippingAddress
+          .Form__ShippingAddress--Left
+            %span 配送先
+            %ul
+              %li 〒000-0000
+              %li 東京都 東京区 東京1-2-3
+              %li 山田 花子
+          .Form__ShippingAddress--Right
+            = link_to "#", class: 'ChangeButton' do
+              変更する >
+        -# = f.submit '購入する', class: 'Form__Btn'
+        .Form__Btn
+          = link_to "#", class: 'Form__Btn--Btn' do
+            購入する
+  .Footer
+    .Terms
+      %ul.Terms__Links
+        %li.Terms__Links--PrivacyPolicy
+          = link_to "#", class: 'Link' do
+            プライバシーポリシー
+        %li.Terms__Links--TermsOfService
+          = link_to "#", class: 'Link' do
+            FURIMA利用規約
+        %li.Terms__Links--NotationRelatedToSpecificCommercialTransactions
+          = link_to "#", class: 'Link' do
+            特定商取引に関する表記
+    .BottomLogoImage
+      = image_tag asset_path('logo.png'), class: 'BottomLogoImage__logo'
+    .Copyright
+      © FURIMA
