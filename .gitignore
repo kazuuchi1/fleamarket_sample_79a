@@ -25,7 +25,7 @@
 
 /public/packs
 /public/packs-test
-/public/uploadeds/product_image
+public/uploads
 /node_modules
 /yarn-error.log
 yarn-debug.log*

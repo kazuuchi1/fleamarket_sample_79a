@@ -88,14 +88,11 @@
             購入画面に進む
       -# 《⬇︎コメント機能は実装するかわからないので形だけ》
       .CommentBox
-        -# = form_with, model: @comment, class: 'CommentForm', local: true do |f|
         .CommentForm
-          -# = f.text_area :text, class: 'CommentForm__text'
           .CommentForm__Text
           .CommentForm__NoticeMsg
             相手のことを考え丁寧なコメントを心がけましょう。
             %br 不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          -# = f.submit 'コメントする', class: 'CommentForm__SendBtn'
           = link_to "#", class: 'CommentForm__SendBtn' do
             = icon('fas', 'comment')
             コメントする
