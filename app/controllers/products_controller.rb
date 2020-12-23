@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
   
   def index
     @products = Product.all.order('created_at DESC')
-    # @products = Product.includes(:images).order('created_at DESC')
     @product_images = ProductImage.all
     @parents = Category.where(ancestry: nil) 
     @purchase_history = PurchaseHistory.all
