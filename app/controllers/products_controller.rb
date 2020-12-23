@@ -48,7 +48,30 @@ class ProductsController < ApplicationController
   end
 
   def update
-    unless ProductImage.all.where(product_id: params[:id]).count == 1 && productedit_params[:_destroy] == nil && params[:product_images] == nil
+    destroy_count = 0
+
+    if productedit_params["product_images_attributes"]["0"]
+      params0 = productedit_params["product_images_attributes"]["0"]["_destroy"].to_i
+      destroy_count += params0
+    else
+      false
+    end
+
+    if productedit_params["product_images_attributes"]["1"]
+      params1 = productedit_params["product_images_attributes"]["1"]["_destroy"].to_i
+      destroy_count += params1
+    else
+      false
+    end
+
+    if productedit_params["product_images_attributes"]["2"]
+      params2 = productedit_params["product_images_attributes"]["2"]["_destroy"].to_i
+      destroy_count += params2
+    else
+      false
+    end
+
+    unless ProductImage.all.where(product_id: params[:id]).count == destroy_count && params[:product_images] == nil
       if @product.update(productedit_params)
         unless params[:product_images] == nil
           params[:product_images]['image'].each do |i|
@@ -102,7 +125,7 @@ class ProductsController < ApplicationController
   def set_product
     @product = Product.find(params[:id])
   end
-  
+
   def set_category
     @category_parent_array = Category.where(ancestry: nil)
   end
