@@ -352,3 +352,8 @@ categories = Category.create(name: "カテゴリー一覧")
 Size.create(name: "S")
 Size.create(name: "M")
 Size.create(name: "L")
+
+
+
+# ブランド
+Brand.create(name: "テストブランド")

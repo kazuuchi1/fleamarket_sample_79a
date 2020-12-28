@@ -85,8 +85,11 @@
                 .ItemDetail__Details
                   .Price
                     = "#{product.price}円"
-                    %p (税込)
-                    -# ↑表記が確定したら繋げる
+                    %p
+                      - if product.shipping_cost == "送料込み（出品者負担）"
+                        (税込)
+                      - else
+                        (税抜)
                   .Favorites
                     = icon('fas', 'star')
                     1
@@ -101,8 +104,11 @@
                 .ItemDetail__Details
                   .Price
                     = "#{product.price}円"
-                    %p (税込)
-                    -# ↑表記が確定したら繋げる
+                    %p
+                      - if product.shipping_cost == "送料込み（出品者負担）"
+                        (税込)
+                      - else
+                        (税抜)
                   .Favorites
                     = icon('fas', 'star')
                     1
@@ -127,7 +133,11 @@
               .ItemDetail__Details
                 .Price
                   = "#{product.price}円"
-                  %p (税込)
+                  %p
+                    - if product.shipping_cost == "送料込み（出品者負担）"
+                      (税込)
+                    - else
+                      (税抜)
                 .Favorites
                   = icon('fas', 'star')
                   1
@@ -142,7 +152,11 @@
               .ItemDetail__Details
                 .Price
                   = "#{product.price}円"
-                  %p (税込)
+                  %p
+                    - if product.shipping_cost == "送料込み（出品者負担）"
+                      (税込)
+                    - else
+                      (税抜)
                 .Favorites
                   = icon('fas', 'star')
                   1

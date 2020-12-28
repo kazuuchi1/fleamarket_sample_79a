@@ -37,7 +37,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :buyers, only: [:new, :create]
+
   resources :products do
+
+    resources :product_images
+
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
@@ -47,9 +52,5 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
-
-  resources :buyers, only: [:new, :create]
-
-  resources :products, only: [:index, :new, :show, :destroy, :create]
   
 end
