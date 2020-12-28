@@ -76,10 +76,14 @@ ActiveRecord::Schema.define(version: 2020_12_08_182348) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+<<<<<<< Updated upstream
     t.bigint "size_id"
     t.integer "prefecture_id", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["size_id"], name: "index_products_on_size_id"
+=======
+    t.index ["brand_id"], name: "index_products_on_brand_id"
+>>>>>>> Stashed changes
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -116,5 +120,8 @@ ActiveRecord::Schema.define(version: 2020_12_08_182348) do
   add_foreign_key "products", "brands"
   add_foreign_key "products", "sizes"
   add_foreign_key "products", "users"
+<<<<<<< Updated upstream
   add_foreign_key "purchase_histories", "products"
+=======
+>>>>>>> Stashed changes
 end

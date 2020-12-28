@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+<<<<<<< Updated upstream
   # before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_product, except: [:index, :new, :create]
   
@@ -34,6 +35,15 @@ class ProductsController < ApplicationController
   end
 
   def edit
+=======
+  
+  def index
+    @products = Product.all
+    @product_images = ProductImage.all
+>>>>>>> Stashed changes
+  end
+
+  def new
   end
 
   def show
@@ -41,6 +51,7 @@ class ProductsController < ApplicationController
     @categories = @product.categories
     @product_image = ProductImage.find_by(product_id: params[:id])
     @product_images = ProductImage.all.where(product_id: params[:id])
+<<<<<<< Updated upstream
     @purchase_history = PurchaseHistory.find_by(product_id: params[:id])
   end
     
@@ -85,4 +96,18 @@ class ProductsController < ApplicationController
   def set_category  
     @category_parent_array = Category.where(ancestry: nil)
   end
+=======
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    if @product.user.id == current_user.id
+      @product.destroy
+      redirect_to root_path
+    else
+      render root_path
+    end
+  end
+
+>>>>>>> Stashed changes
 end

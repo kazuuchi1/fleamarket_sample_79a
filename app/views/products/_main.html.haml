@@ -72,6 +72,7 @@
         %h3.title 新規投稿商品
     .productlists
       - @products.each do |product|
+<<<<<<< Updated upstream
         - if @purchase_history.find_by(product_id: product.id)
           .PurchasedProducts
             .SoldOutMsg
@@ -135,14 +136,48 @@
         .Products
           = link_to product_path(product.id), class: 'Product' do
             = image_tag @product_images.find_by(product_id: product.id).image.url, class: 'ItemImage'
+=======
+        .Products
+          = link_to product_path(product.id), class: 'Product' do
+            = image_tag @product_images.find_by(product_id: product.id).image, class: 'ItemImage'
+>>>>>>> Stashed changes
             .ItemDetail
               .ItemDetail__Name
                 %h3
                   = product.name
               .ItemDetail__Details
                 .Price
+<<<<<<< Updated upstream
                   = "#{product.price}円"
+=======
+                  = product.price
+>>>>>>> Stashed changes
                   %p (税込)
                 .Favorites
                   = icon('fas', 'star')
                   1
+<<<<<<< Updated upstream
+=======
+%section.productbrnd
+  %h2.kategorihead ピックアップブランド
+  .productbox
+    .productboxhead
+      = link_to "#" do
+        %h3.title アーカイバ
+  .productlists
+    - @products.each do |product|
+      .Products
+        = link_to product_path(product.id), class: 'Product' do
+          = image_tag @product_images.find_by(product_id: product.id).image, class: 'ItemImage'
+          .ItemDetail
+            .ItemDetail__Name
+              %h3
+                = product.name
+            .ItemDetail__Details
+              .Price
+                = product.price
+                %p (税込)
+              .Favorites
+                = icon('fas', 'star')
+                1
+>>>>>>> Stashed changes

@@ -56,7 +56,7 @@
               %th 発送元の地域
               %td
                 = link_to "#", class: 'Link' do
-                  = @product.prefecture.name
+                  = @product.user.address.prefecture.name
             %tr
               %th 発送日の目安
               %td
@@ -80,7 +80,11 @@
             商品の編集
           .OR
             or
+<<<<<<< Updated upstream
           = link_to product_path, method: :delete, data: { confirm: "商品を削除します。よろしいですか？" }, class: 'EditBox__Btn EditBox__Btn--DeleteBtn' do
+=======
+          = link_to product_path, method: :delete, data: { confirm: "削除しますか？" }, class: 'EditBox__Btn EditBox__Btn--DeleteBtn' do
+>>>>>>> Stashed changes
             商品の削除
       - else !(user_signed_in?) || current_user.id ==! @product.user_id
         .ToBuyBox

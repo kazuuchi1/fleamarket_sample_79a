@@ -8,6 +8,19 @@ Rails.application.routes.draw do
     get '/users/sign_out', to: 'devise/sessions#destroy'
   end
 
+<<<<<<< Updated upstream
+=======
+  # resources :users, only: :show do
+  #   collection do
+  #     get 'edit_profile', 'edit_address'
+  #     get 'sell_items'
+  #     get 'bought_items'
+  #     patch 'update_profile', 'update_address'
+  #     get 'favorite_items'
+  #   end
+  # end
+ 
+>>>>>>> Stashed changes
   root 'products#index'
 
   resources :payment_cards, only: [:new, :create, :index, :destroy]
@@ -49,7 +62,11 @@ Rails.application.routes.draw do
   end
 
   resources :buyers, only: [:new, :create]
+<<<<<<< Updated upstream
 
   resources :products, only: [:index, :new, :show, :destroy, :create]
   
+=======
+  resources :products, only: [:index, :new, :show, :destroy]
+>>>>>>> Stashed changes
 end

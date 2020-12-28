@@ -8,4 +8,11 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application'
   %body
+<<<<<<< Updated upstream
     = yield
+=======
+    .main
+      = render "products/header"
+      = yield
+      = render "products/footer"
+>>>>>>> Stashed changes
