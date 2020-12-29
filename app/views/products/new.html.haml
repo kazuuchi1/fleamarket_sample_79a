@@ -1,4 +1,3 @@
-!!!
 .devise__header
   = link_to root_path do
     = image_tag asset_path("logo_1.png") 
@@ -12,6 +11,11 @@
         %p 最大3枚までアップロードできます
         .image-box
           = f.fields_for :product_images, multiple: true do |i|
+            .prev-contents0
+              .prev-content
+              = i.label :image, for: '0', class: "linking" do
+                = image_tag asset_path("ファイル選択.png"), class: "linkingimage"
+                = i.file_field :image, type: 'file', class: 'js-file0', id: '0', name: "product_images[image][]"
             .prev-contents1
               .prev-content
               = i.label :image, for: '1', class: "linking" do
@@ -22,11 +26,6 @@
               = i.label :image, for: '2', class: "linking" do
                 = image_tag asset_path("ファイル選択.png"), class: "linkingimage"
                 = i.file_field :image, type: 'file', class: 'js-file2', id: '2', name: "product_images[image][]"
-            .prev-contents3
-              .prev-content
-              = i.label :image, for: '3', class: "linking" do
-                = image_tag asset_path("ファイル選択.png"), class: "linkingimage"
-                = i.file_field :image, type: 'file', class: 'js-file3', id: '3', name: "product_images[image][]"
       .form-item
         .form-item__name
           .form-item__name__label

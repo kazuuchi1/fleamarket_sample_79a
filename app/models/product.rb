@@ -16,6 +16,11 @@ class Product < ApplicationRecord
   validates :price, numericality: { greater_than_or_equal_to: 300, less_than: 9999999 }
   validates :status, :shipping_cost, :prefecture_id, :days, exclusion: { in: %w(選択してください) }
 
+  def validate_images
+    if images.count >= 3
+    end
+  end
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
 end
